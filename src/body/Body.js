@@ -430,7 +430,7 @@ var Body = {};
         body.position.y += body.velocity.y;
 
         // update angular velocity with verlet integration
-        body.angularVelocity = ((body.angle - body.anglePrev) * frictionAir * correction) + (body.torque / body.inertia) * deltaTimeSquared;
+        body.angularVelocity = ((body.angle - body.anglePrev) * frictionAir * correction) + body.torque * deltaTimeSquared;
         body.anglePrev = body.angle;
         body.angle += body.angularVelocity;
 
